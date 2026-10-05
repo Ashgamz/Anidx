@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniDX - Infinite Anime Streams</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Global Top Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">Ani<span>DX</span></div>
+        <div class="nav-actions">
+            <button class="nav-btn">🔔</button>
+            <div class="profile-container" onclick="toggleDropdown()">
+                <div class="avatar"></div>
+                <!-- Curved User Profile Dropdown Menu -->
+                <div id="profileMenu" class="profile-dropdown">
+                    <div class="dropdown-header">
+                        <h4>Premium Otaku</h4>
+                        <p>● 142 Episodes Watched</p>
+                    </div>
+                    <a href="#settings">Profile Settings</a>
+                    <a href="#servers">Premium Route</a>
+                    <a href="#signout" class="orange-text">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace (Streaming Player & Sliding Chat Sidebar) -->
+    <main class="workspace-container">
+        <!-- Video Canvas Section -->
+        <section class="player-canvas">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <div class="player-bar-track">
+                    <div class="player-bar-progress"></div>
+                </div>
+            </div>
+            
+            <!-- Streaming Server Toggles & Sub/Dub Badges -->
+            <div class="stream-controls">
+                <div class="server-toggles">
+                    <button class="server-btn active">Alpha Route</button>
+                    <button class="server-btn">Omega Node</button>
+                </div>
+                <div class="media-badges">
+                    <span class="badge active">SUB</span>
+                    <span class="badge">DUB</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collapsible Sliding Community Chat Room Sidebar -->
+        <aside id="chatSidebar" class="chat-sidebar">
+            <button class="collapse-toggle" onclick="toggleChat()">◀</button>
+            <div class="chat-header">
+                <h3>Live Room</h3>
+                <span class="online-indicator">● 1,420 Online</span>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-bubble"><span class="chat-user">ZoroLover:</span> This animation is unreal!</div>
+                <div class="chat-bubble"><span class="chat-user">GokuGoat:</span> Streaming smoothly.</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Send a message..." class="chat-input">
+                <button class="chat-send">▶</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Library Collection Management Trays -->
+    <section class="library-section">
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="switchTab('history')">Watch History</button>
+            <button class="tab-btn" onclick="switchTab('favorites')">Favorites</button>
+            <button class="tab-btn" onclick="switchTab('gonna-watch')">Gonna Watch</button>
+            <button class="add-custom-btn" onclick="createCustomShelf()">+ Custom Category</button>
+        </div>
+
+        <div id="libraryGrid" class="media-grid">
+            <!-- Anime Card with Overlapping Depth Glass Plate & Image Focus -->
+            <div class="anime-card">
+                <div class="image-wrapper">
+                    <div class="anime-poster-fallback"></div>
+                    <span class="card-badge">Ep 4 of 24</span>
+                    <!-- Translucent Glassmorphism Overlapping Plate -->
+                    <div class="glass-overlay">
+                        <div class="overlay-details">
+                            <h4 class="anime-title">Chainsaw Man</h4>
+                            <span class="rating">★ 8.9</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dynamic Shelf Manager Dropdown -->
+                <div class="move-dropdown-container">
+                    <select class="move-dropdown" onchange="moveAnime(this)">
+                        <option value="" disabled selected>Move To...</option>
+                        <option value="history">Watch History</option>
+                        <option value="favorites">Favorites</option>
+                        <option value="gonna-watch">Gonna Watch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Engine Grid -->
+    <section class="discover-section">
+        <div class="search-header">
+            <input type="text" placeholder="Search anime titles..." class="search-bar">
+            <div class="genre-filter-chips">
+                <span class="chip active">Action</span>
+                <span class="chip">Sci-Fi</span>
+                <span class="chip">Cyberpunk</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
